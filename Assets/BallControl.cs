@@ -34,6 +34,11 @@ public class BallControl : MonoBehaviour
         // Ridigbody に力を与えて玉を動かす
         rb.AddForce(rotmove * speed);
 
+        if(transform.position.y < -100)
+        {
+            transform.position = new Vector3(0, 100, 0);
+        }
+
         Debug.Log(transform.localScale.x);
     }
 }
